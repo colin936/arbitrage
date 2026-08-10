@@ -1,0 +1,33 @@
+{
+  "name": "altruva-platform",
+  "version": "1.0.0",
+  "description": "A corporate-housing platform for managing properties and leases.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server/index.js",
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/altruva-platform.git"
+  },
+  "keywords": [
+    "corporate-housing",
+    "property-management",
+    "SaaS"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "supabase-js": "^1.28.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "jest": "^27.0.6",
+    "eslint": "^7.32.0"
+  }
+}
