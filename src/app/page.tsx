@@ -103,7 +103,7 @@ export default async function HomePage() {
       <section className="card">
         <div className="section-heading">
           <div>
-            <h2>Recent extracted leases</h2>
+            <h2>All Leases</h2>
             <p className="section-description">Latest leases with extracted fields from uploaded documents.</p>
           </div>
         </div>
