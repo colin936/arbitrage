@@ -2,6 +2,7 @@ import { fetchDeadlines } from "@services/deadlineService";
 import LeaseUpload from "@components/LeaseUpload";
 import RenewalSchedule from "@components/RenewalSchedule";
 import { supabase } from "@lib/supabaseClient";
+import AskRenewButton from "@components/AskRenewButton";
 
 async function LeaseList() {
   const { data, error } = await supabase
@@ -21,7 +22,7 @@ async function LeaseList() {
   return (
     <div>
       {rows.length === 0 && <p>No leases found.</p>}
-      {rows.map((r: any) => {
+        {rows.map((r: any) => {
         const clientName = r.client?.name ?? "-";
         const address = r.property?.address ?? "-";
         const startDate = r.start_date ? new Date(r.start_date).toLocaleDateString() : "-";
@@ -30,6 +31,7 @@ async function LeaseList() {
           ? new Date(new Date(r.end_date).getTime() - r.notice_period_days * 24 * 60 * 60 * 1000).toLocaleDateString()
           : "-";
         const deposit = r.deposit_amount != null ? `${r.deposit_amount}` : "-";
+        const daysUntilEnd = r.end_date ? Math.ceil((new Date(r.end_date).getTime() - Date.now()) / (24 * 60 * 60 * 1000)) : null;
 
         return (
           <div key={r.id} style={{ marginBottom: 12 }}>
@@ -37,7 +39,13 @@ async function LeaseList() {
             <div>Client: {clientName}</div>
             <div>Address: {address}</div>
             <div>Start: {startDate} — End: {endDate}</div>
-            <div>Renew?: -</div>
+            <div>
+              Renew?: {daysUntilEnd !== null && daysUntilEnd <= 60 ? (
+                <AskRenewButton clientName={clientName} address={address} endDate={endDate} />
+              ) : (
+                daysUntilEnd === null ? "-" : "No"
+              )}
+            </div>
             <div>Notice to vacate: {noticeToVacate}</div>
             <div>Security deposit: {deposit}</div>
           </div>
