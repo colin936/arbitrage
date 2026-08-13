@@ -1,0 +1,14 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "npm install": true,
+        "Move-Item": true,
+        "where": true,
+        "winget": true,
+        "/^cd \"c:\\\\Users\\\\colin\\\\OneDrive\\\\Desktop\\\\Test Dev\\\\Arbitrage App\\\\altruva-platform\"; docker --version; where docker$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "Get-Command": true,
+        "Test-Path": true
+    }
+}

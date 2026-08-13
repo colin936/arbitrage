@@ -8,19 +8,55 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["app/components/*"],
-      "@pages/*": ["app/pages/*"],
-      "@services/*": ["app/services/*"],
-      "@styles/*": ["app/styles/*"],
-      "@api/*": ["server/api/*"],
-      "@edge/*": ["server/edge/*"],
-      "@jobs/*": ["server/jobs/*"],
-      "@lib/*": ["server/lib/*"],
-      "@types/*": ["shared/types/*"]
-    }
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@pages/*": [
+        "app/pages/*"
+      ],
+      "@services/*": [
+        "app/services/*"
+      ],
+      "@styles/*": [
+        "app/styles/*"
+      ],
+      "@api/*": [
+        "server/api/*"
+      ],
+      "@edge/*": [
+        "server/edge/*"
+      ],
+      "@jobs/*": [
+        "server/jobs/*"
+      ],
+      "@lib/*": [
+        "server/lib/*"
+      ],
+      "@types/*": [
+        "shared/types/*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

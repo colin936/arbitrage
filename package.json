@@ -2,16 +2,17 @@
   "name": "altruva-platform",
   "version": "1.0.0",
   "description": "A corporate-housing platform for managing properties and leases.",
+  "private": true,
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/server/index.js",
-    "build": "tsc",
-    "test": "jest",
-    "lint": "eslint ."
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/altruva-platform.git"
+    "url": "https://github.com/colin936/arbitrage.git"
   },
   "keywords": [
     "corporate-housing",
@@ -21,13 +22,19 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
-    "supabase-js": "^1.28.0",
-    "cors": "^2.8.5"
+    "@supabase/supabase-js": "^2.0.0",
+    "next": "14.2.5",
+    "papaparse": "^5.5.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "typescript": "^4.5.4",
-    "jest": "^27.0.6",
-    "eslint": "^7.32.0"
+    "@types/node": "^20.9.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5.5.3"
   }
 }
